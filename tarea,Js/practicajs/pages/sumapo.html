@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Suma de Números</title>
+    <link rel="stylesheet" href="../css/estilos.css">
+</head>
+<body>
+    <header>
+<h1>Suma de Números</h1>
+</header> 
+<main>
+    <section class="container">
+<form id="sumaForm" action="../index.html" >
+    <label for="numeroInput">Ingrese un número positivo:</label>
+    <input type="number" id="numeroInput" min="0">
+             <div id="resp" >
+    <button type="button"  class="p"  onclick="sumarNumero()">Agregar</button>
+</form>
+</section>
+<p class="po" id="resultado">Suma: 0</p>
+
+<script>
+    function sumarNumero() {
+        // Obtener el valor ingresado por el usuario
+        var numero = parseInt(document.getElementById('numeroInput').value);
+
+        // Verificar si el número es positivo
+        if (numero >= 0) {
+            // Actualizar la suma
+            suma += numero;
+
+            // Mostrar la suma actualizada
+            document.getElementById('resultado').innerText = 'Suma: ' + suma;
+        } else {
+            // Si se ingresa un número negativo, mostrar un mensaje y reiniciar la suma
+            alert('Por favor, ingrese solo números positivos.');
+            resetearSuma();
+        }
+
+        // Limpiar el campo de entrada
+        document.getElementById('numeroInput').value = '';
+    }
+
+    function resetearSuma() {
+        // Reiniciar la suma
+        suma = 0;
+
+        // Mostrar la suma reiniciada
+        document.getElementById('resultado').innerText = 'Suma: 0';
+    }
+
+    // Inicializar la variable de suma
+    var suma = 0;
+</script>
+
+</body>
+</html>

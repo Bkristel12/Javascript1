@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suma de Números</title>
+ 
+</head>
+<body>
+  <h2>Calculadora de Suma</h2>
+  <p>Ingrese números enteros positivos. El programa sumará los números hasta que ingrese un número negativo.</p>
+
+  <form id="sumaForm">
+    <label for="numeroInput">Ingrese un número:</label>
+    <input type="number" id="numeroInput" />
+    <button type="button" onclick="sumarNumero()">Agregar Número</button>
+  </form>
+
+  <p id="resultado">Suma: 0</p>
+
+  <script>
+    // Inicializar la suma
+    var suma = 0;
+
+    function sumarNumero() {
+  
+      // Obtener el valor ingresado por el usuario
+      var numero = parseInt(document.getElementById('numeroInput').value);
+
+      // Verificar si el número es positivo
+      if (numero >= 0) {
+        // Sumar el número al total
+        suma += numero;
+
+        // Actualizar el resultado en la interfaz
+        document.getElementById('rep').textContent = 'Suma: ' + suma;
+      } else {
+        // Mostrar mensaje de fin del programa
+        alert('Ingresaste un número negativo. La suma ha terminado.');
+        
+        // Deshabilitar el formulario para evitar más ingresos
+        document.getElementById('sumaForm').style.display = 'none';
+      }
+    }
+  </script>
+</body>
+</html>
